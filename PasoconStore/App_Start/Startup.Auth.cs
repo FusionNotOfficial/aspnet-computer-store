@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Security.Google;
 using Owin;
 using PasoconStore.Models;
 using System;
@@ -57,11 +61,11 @@ namespace PasoconStore
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "896486846982-dasg2i2rfl9psbs6426tu9d9tckso2f2.apps.googleusercontent.com",
+                ClientSecret = "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"
+            });
         }
     }
 }

@@ -5,9 +5,11 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <main aria-labelledby="title">
         <h2 id="title"><%: Title %>.</h2>
+
+        <div class="row">
         <div class="col-md-8">
             <section id="loginForm">
-                <div class="row">
+                <div class="form-horizontal">
                     <h4>Use a local account to log in.</h4>
                     <hr />
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
@@ -44,8 +46,10 @@
                         </div>
                     </div>
                 </div>
+
                 <p>
-                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
+                    if you don't have a local account.
                 </p>
                 <p>
                     <%-- Enable this once you have account confirmation enabled for password reset functionality
@@ -54,11 +58,12 @@
                 </p>
             </section>
         </div>
-
         <div class="col-md-4">
-            <section id="socialLoginForm">
-                <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-            </section>
-        </div>
+    <section id="socialLoginForm">
+        <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
+    </section>
+</div>
+            </div>
+        
     </main>
 </asp:Content>
