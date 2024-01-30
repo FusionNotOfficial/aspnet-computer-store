@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
+using PasoconStore.Logic;
 
 namespace PasoconStore
 {
@@ -17,6 +18,9 @@ namespace PasoconStore
 
             // Initialize the product database.
             Database.SetInitializer(new ProductDatabaseInitializer());
+
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole();
         }
     }
 }
